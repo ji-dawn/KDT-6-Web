@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>퀴즈 1 : HTML 요소 내용 변경하기</title>
+  </head>
+  <body>
+    <span>민트 초코는 </span>
+    <span>맛있다 &gt;_&lt;</span>
+    <script>
+      let span = document.querySelectorAll("span");
+      span[1].innerHTML = "<b>맛없다 --&#59;&#59;</b>";
+      span[1].style.color = "red";
+    </script>
+  </body>
+</html>

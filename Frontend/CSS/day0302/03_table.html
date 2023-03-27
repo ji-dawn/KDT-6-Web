@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03_table</title>
+</head>
+<body>
+  <table border="1" width="150" height="150" align="center" bgcolor="blue">
+    <caption>
+      table
+    </caption>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+
+  <table border="2" align="center" cellspacing="0" cellpadding="20">
+    <caption><h2>가격표</h2></caption>
+    <tr>
+      <th>메뉴</th>
+      <th>가격</th>
+      <th>비고</th>
+    </tr>
+    <tr>
+      <td>떡볶이</td>
+      <td>5000</td>
+      <td>2인 이상 주문 가능</td>
+    </tr>
+    <tr>
+      <td>김밥</td>
+      <!-- rowspan, colspan을 사용하기 위해서는 병합될 td를 삭제해야 한다. -->
+      <td rowspan="2">3000</td>
+      <td></td> 
+    </tr>
+    <tr>
+      <td>순대</td>
+      <td>간, 허파 주문 가능</td>
+    </tr>
+  </table>
+</body>
+</html>

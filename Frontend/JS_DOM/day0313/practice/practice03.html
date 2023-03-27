@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습 3 : Todo List 올바르게 변경하기</title>
+    <style>
+      .done {
+        color: gray;
+        font-style: italic;
+        text-decoration: line-through;
+      }
+      .todo {
+        width: max-content;
+        font-weight: bold;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>TODO List</h2>
+    <ul>
+      <li class="todo">점심 먹기</li>
+      <li class="todo">커피 마시기</li>
+      <li class="done">과제 완성하기</li>
+      <li class="done">운동하기</li>
+      <li class="done">저녁먹기</li>
+    </ul>
+    <script>
+      let list = document.querySelectorAll("ul > li");
+      for (let item of list) {
+        if (item.className == "todo") {
+          item.classList.remove("todo");
+          item.classList.add("done");
+        } else {
+          item.classList.remove("done");
+          item.classList.add("todo");
+        }
+      }
+    </script>
+  </body>
+</html>

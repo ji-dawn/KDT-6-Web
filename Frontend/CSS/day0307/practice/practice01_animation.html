@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko`">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습 : 시계방향으로 도는 공</title>
+  <style>
+    .ball {
+      width: 100px;
+      height: 100px;
+      background-color: hotpink;
+      border-radius: 50%;
+      position: relative;
+      top: 0;
+      left: 0;
+      animation: clockwise 4s linear infinite alternate;
+    }
+    @keyframes clockwise {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(calc(100vw - 100px), 0);
+      }
+      50% {
+        transform: translate(calc(100vw - 100px), calc(100vh - 100px));
+      }
+      75% {
+        transform: translate(0, calc(100vh - 100px));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+</body>
+</html>

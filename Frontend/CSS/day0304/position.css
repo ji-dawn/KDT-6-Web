@@ -1,0 +1,81 @@
+body {
+  height: 2000px;
+  /* background: linear-gradient(white, orange); */
+}
+div {
+  width: 100px;
+  height: 100px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 100px;
+}
+.position-static {
+  background-color: pink;
+  position: static;
+  top: 100px;
+  left: 50px;
+}
+.position-relative {
+  background-color: aqua;
+  position: relative;
+  top: 100px;
+  left: 100px;
+}
+.position-absolute {
+  background-color: gold;
+  opacity: 0.5;
+  position: absolute;
+  /* fixed가 absolute 자리로 올라가 가려짐 */
+  /* absolute를 위치시키고 싶다면 
+  주로 부모의 position을 relative로 한다.*/
+  top: 50px;
+  left: 0px;
+}
+.position-fixed {
+  background-color: lightgreen;
+  position: fixed;
+  /* 고정된 header를 만들 수 있다. */
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.parent {
+  position: relative;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+.circle1 {
+  background-color: #9afaff;
+  top: 0;
+  left: 200px;
+  z-index: 1;
+}
+.circle2 {
+  background-color: #84ff8d;
+  top: 0;
+  left: 150px;
+  z-index: 2;
+}
+.circle3 {
+  background-color: #ffeb88; 
+  top: 0;
+  left: 100px;
+  z-index: 3;
+}
+.circle4 {
+  background-color: #ffb680; 
+  top: 0;
+  left: 50px;
+  z-index: 2;
+}
+.circle5 {
+  top: 0;
+  left: 0;
+  background-color: #ff7c7c;
+  z-index: 1;
+}

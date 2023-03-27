@@ -1,0 +1,114 @@
+.d-block {
+  display: block;
+  background-color: blueviolet;
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  padding: 30px;
+  margin: 20px;
+}
+
+.d-inline {
+  display: inline;
+  background-color: red;
+  border: 1px solid blue;
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  /* padding: 30px; */
+}
+
+.d-inline-block {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  /* margin: 20px;
+  padding: 30px; */
+  padding: 10px 20px 30px 40px;
+}
+
+.parent {
+  width: 300px;
+  height: 200px;
+  background-color: red;
+}
+.parent .min {
+  /* 부모의 크기를 기본적으로 따라가나 
+  부모의 크기가 min-width보다 작다면 min-width를 적용 */
+  min-width: 400px;
+  height: 100px;
+  background-color: orange;
+}
+.parent .max {
+  max-width: 400px;
+  height: 100px;
+  background-color: aqua;
+}
+.box {
+  background-color: pink;
+  border: 1px solid black;
+}
+
+.box-px{
+  width: 50px;
+  height: calc(50vw - 10px);
+}
+.box-viewport{
+  width: 50vw;
+  height: 50vh;
+}
+.box-percent{
+  width: 10%;
+  height: 10%;
+}
+/* body {
+  height: 1000px;
+} */
+.rem {
+  font-size: 2rem;
+}
+.em {
+  font-size: 2em;
+}
+
+.square {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+.border {
+  border: 3px solid black;
+  /* border의 기본값 */
+  /* medium none black */
+  /* border-style: dashed; 점선 */
+  border-color: blue;
+  border-color: red orange yellow green;
+  border-left: 5px dotted slateblue;
+  border-top-style: dashed;
+}
+.rounded {
+  background-color: thistle;
+  border-radius: 10px;
+  border-radius: 10px 40px;
+  border-radius: 10px 20px 40px;
+  border-radius: 5px 20px 30px 40px;
+  border-radius: 10%;
+  /* 50% 이상부터 circle */
+  border-radius: 50%;
+}
+
+.box-sizing {
+  padding: 20px;
+  border: 15px solid black;
+  background-color: orange;
+}
+.content-box {
+  /* default */
+  box-sizing: content-box;
+}
+.border-box {
+  box-sizing: border-box;
+}

@@ -1,0 +1,26 @@
+body {
+  position: relative;
+}
+.circle {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: linear-gradient(#833ab4, #fd1d1d, #fcb045);
+}
+.profile-image {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 16px;
+  background-color: white;
+  background-image: url(../image/pooh.png);
+  background-size: cover;
+}

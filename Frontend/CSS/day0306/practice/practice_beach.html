@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습 : 해변 사진 효과</title>
+  <style>
+    .box {
+      width: 1200px;
+      height: 600px;
+      background-color: beige;
+      position: relative;
+      padding: 100px;
+    }
+    .box img {
+      width: 400px;
+      height: 200px;
+      position: absolute;
+      transform: perspective(600px) rotateX(-25deg) rotateY(-45deg) ;
+    }
+    .box img:hover {
+      transition-duration: 1s;
+      transform: perspective(500px) rotateY(0deg);
+      z-index: 3;
+    }
+    .beach1 {
+      top: 300px;
+      left: 300px;
+      z-index: 3;
+    }
+    .beach2 {
+      top: 300px;
+      left: 500px;
+      z-index: 2;
+    }
+    .beach3 {
+      top: 300px;
+      left: 700px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img class="beach1" src="../images/beach1.jpg" alt="beach1">
+    <img class="beach2" src="../images/beach2.jpg" alt="beach2">
+    <img class="beach3" src="../images/beach3.jpg" alt="beach3">
+  </div>
+</body>
+</html>

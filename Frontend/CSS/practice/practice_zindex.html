@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습 : 요소 쌓임 순서 및 z-index</title>
+  <style>
+    div.container {
+      width: 500px;
+      height: 500px;
+      background-color: beige;
+    }
+    .container > div {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+    div.item1 {
+      background-color: aqua;
+      z-index: 3;
+    }
+    div.item2 {
+      background-color: pink;
+      top: 30px;
+      left: 30px;
+      z-index: 1;
+    }
+    div.item3 {
+      background-color: lightgreen;
+      top: 60px;
+      left: 60px;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">item1</div>
+    <div class="item item2">item2</div>
+    <div class="item item3">item3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.ball {
+  width: 100px;
+  height: 100px;
+  background-color: hotpink;
+  border-radius: 50%;
+  position: relative;
+  animation: clockwise 4s linear infinite alternate;
+}
+@keyframes clockwise {
+  from, to {
+    left: 100;
+  }
+  50%
+}

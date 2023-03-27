@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web</title>
+    <style>
+      /*
+      div {
+        width: 100%;
+        height: 100px;
+        background-color: black;
+      }
+      
+      media query 적용은 맨 마지막에 선언된 걸 기준으로 하기 때문에
+      여러 개를 사용할 때 주의해야 하며 가급적 지양한다.
+      */
+
+      /* 
+      @media screen and (min-width: 576px) {
+        // min-width: 576px : width 576px 이상부터 적용
+        div {
+          height: 200px;
+          background-color: red;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        // 768px : common tablet size
+        // max-width: 768px : width 768px 이하부터 적용
+        div {
+          background-color: yellow;
+        }
+      } 
+      */
+
+      /* @media screen and (orientation: landscape) {
+        div {
+          background-color: red;
+        }
+      }
+      @media screen and (orientaition: portrait) {
+        div {
+          background-color: green;
+        }
+      }
+
+      @media print {
+        /* 인쇄 화면에서 배경 그래픽 활성화 시 적용 
+        div {
+          background-color: green;
+        }
+      }
+      */
+      .box {
+        display: flex;
+      }
+      .box > div {
+        margin: 20px;
+        background-color: pink;
+      }
+      @media screen and (max-width: 700px) {
+        .box {
+          display: inline-block;
+        }
+      }
+      /* 사용자 지정 CSS (변수) */
+      :root {
+        --main-color: orange;
+        --main-bc-color: navy;
+        --main-height: 200px;
+        --main-font-size: 20px;
+      }
+      div {
+        height: var(--main-height);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>a</div>
+      <div>b</div>
+      <div>c</div>
+      <div>d</div>
+      <div>a</div>
+      <div>b</div>
+      <div>c</div>
+      <div>d</div>
+      <div>a</div>
+      <div>b</div>
+      <div>c</div>
+      <div>d</div>
+      <div>a</div>
+      <div>b</div>
+      <div>c</div>
+      <div>d</div>
+    </div>
+  </body>
+</html>

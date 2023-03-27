@@ -1,0 +1,85 @@
+/* 
+transition vs animation
+
+transition
+- 전환된 "스타일"이 있어야됨
+- 이벤트에 의해 발생(hover, active, onclick 등)
+
+animation
+- 중간 step 지정 가능 : 보다 세밀한 스타일 전환 가능
+- 정지, 반복, 시작 동작이 따로 가능
+- @keyframes 라는 키워드를 사용
+*/
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: beige;
+  position: relative;
+  animation-name: my-ani;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  animation-timing-function: ease;
+  /* animation-timing-function: linear; : 등속 운동 */
+}
+@keyframes my-ani {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 200px;
+  }
+  50% {
+    left: 400px;
+  }
+  75% {
+    left: 200px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+.bounce-ball1 {
+  width: 100px;
+  height: 100px;
+  background-color: burlywood;
+  border-radius: 50%;
+  position: relative;
+  left: 100px;
+  top: 0;
+  animation-name: bounce1;
+  animation-duration: 1s;
+  /* animation-timing-function: ease-in; */
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  /* animation-direction: alternate; :  */
+}
+@keyframes bounce1 {
+  to {
+    top: 0;
+  }
+  from {
+    top: 300px;
+  }
+}
+.bounce-ball2 {
+  width: 50px;
+  height: 50px;
+  background-color: cadetblue;
+  border-radius: 50%;
+  position: absolute;
+  animation: bounce2 2s linear infinite;
+}
+/* keyframes 블록 안에서도 animation 속성 설정 가능 */
+@keyframes bounce2 {
+  from, to {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 300px;
+    animation-timing-function: ease-in;
+  }
+}

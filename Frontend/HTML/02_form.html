@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form 태그 학습</title>
+</head>
+<body>
+  <form>
+    <label for="textInput">ID</label>
+    <input type="text" id="textInput">
+    <br>
+    <label for="passwordInput">PW</label>
+    <input type="pass" id="passwordInput">
+    <br>
+    <!-- 
+      email 속성 : 실제 제출할 때 email 형식인지 확인
+      placeholder : Android EditText의 hint 속성과 유사
+     -->
+    <label for="">E-mail</label>
+    <input type="email" placeholder="이메일 형식">
+    <br>
+    <input type="text" value="기본값 value">
+    <br>
+    <!-- cols와 rows는 크기를 결정하며 px값은 아님. rows는 줄 수 -->
+    <textarea cols="30" rows="10" placeholder="하고 싶은 말을 작성해주세요."></textarea>
+    <br>
+    <input type="color">
+    <input type="range">
+    <input type="file">
+    <br>
+    <!-- upDown 형식 -->
+    <input type="number">
+    <br>
+    <input type="date">
+    <input type="datetime-local">
+    <hr>
+    <h5>다음 중 input type이 아닌 것을 모두 고르시오.</h5>
+    <!-- checkbox, radio를 사용할 때는 name 속성으로 하나로 묶어줘야 한다 -->
+    <input type="checkbox" name="input" checked> text
+    <input type="checkbox" name="input" disabled> null
+    <input type="checkbox" name="input"> date
+    <input type="checkbox" name="input"> number
+    <input type="checkbox" name="input"> click
+    <br>
+    <h5>다음 중 img 태그의 속성인 것은?</h5>
+    <!-- 
+      label과 id로 연결해주면 text를 클릭해도 check되기 때문에 편의성을 높일 수 있다
+      id : 숫자, 한글, _를 제외한 특수문자로 시작해서는 안된다
+     -->
+    <input type="radio" name="img" id="alt" disabled> <label for="alt">alt</label>
+    <input type="radio" name="img" id="title"> <label for="title">title</label>
+    <input type="radio" name="img" id="mouse"> <label for="mouse">mouse</label>
+    <input type="radio" name="img" id="href"> <label for="href">href</label>
+    <input type="radio" name="img" id="value"> <label for="value">value</label>
+    <br>
+    <!-- submit은 실제로 form에 입력된 정보들을 제출한다 -->
+    <input type="button" value="Button">
+    <input type="submit" value="제출">
+    <!-- button 태그는 기본 type이 submit. button 태그는 스타일링에 용이 -->
+    <button><span style="color: red;">button</span> 태그</button>
+    <br>
+    <hr>
+    <!-- drop down 형식 -->
+    <select name="flower">
+      <optgroup label="redflower">
+        <option>장미</option>
+        <option>동백꽃</option>
+        <option>카네이션</option>
+      </optgroup>
+      <optgroup label="whiteflower">
+        <option>벚꽃</option>
+        <option>목련</option>
+        <option>매화</option>
+      </optgroup>
+    </select>
+  </form>
+</body>
+</html>

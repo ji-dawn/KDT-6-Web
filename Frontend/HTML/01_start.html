@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html 첫 번째 수업 Tag</title>
+</head>
+<body>
+    <!-- 엔티티코드 : 공백 등과 같은 특수문자 처리 시 사용 -->
+
+    <h1>h1 하나만 사용을 권장</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+<!-- &nbsp : 공백 문자를 여러 개 넣을 때 사용하는 엔티티 코드 -->
+    <p>내일은 3월 1일. &nbsp&nbsp&nbsp&nbsp 공휴일이다.</p>
+
+    <pre>
+        pre 태그 안에 작성 시 엔터와 들여쓰기가 입력된다. 
+
+        단, font가 변경된다.
+    </pre>
+
+    <h2>ol & ul 태그</h2>
+
+    <!-- ul type : disc(default), square, circle(empty circle), nome -->
+    <ul type="square">
+        <li>first list</li>
+        <li>second list</li>
+        <li>third list</li>
+    </ul>
+
+    <!-- ol type : 1(default), a, A, i, I -->
+    <ol type="i">
+        <li>first item</li>
+        <li>second item</li>
+        <li>third item</li>
+    </ol>
+
+    <h2>img & a 태그</h2>
+    <!-- img 태그는 열린 태그로 닫는 태그가 없다. -->
+    
+    <!-- 
+        src : img 태그의 필수 속성 
+        alt : image 경로를 찾지 못했을 때 사진에 대한 설명. 선택 속성. 단, img 태그가 동작하지 않을 경우 필요. 필수적 사용을 권장
+        width : image의 가로 크기를 결정. height 속성을 추가하지 않는다면 원본의 비율에 맞춰 출력
+        height : image의 세로 크기를 결정. width 속성을 추가하지 않는다면 원본의 비율에 맞춰 출력
+    -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1920px-Cat_August_2010-4.jpg" alt="cat with copied link" width="200px"/>
+
+    <br>
+    
+    <!--
+         경로 찾기
+         - 상대 경로
+         ./ : 현재 웹 페이지가 소속된 directory 기준
+         ../ : 현재 웹 페이지가 소속된 부모 directory 기준
+         - 절대 경로
+         / : 누구나 다 알고 있는 동일한 위치를 기준으로 경로 찾기
+         ex) 
+         절대 경로보다는 상대 경로를 권장한다. 
+    -->
+    <img src="./image/1024px-Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpeg" alt="cat with downloaded image file" width="200px"/>
+
+    <br>
+
+    <!-- 
+        target 속성
+            _blank : 새 탭에서 open
+            _self : 기본값. 현재 탭에서 open
+            _parent : 
+            _top : 
+        title 속성 : 마우스 커서를 올리면 나타나는 문장
+     -->
+    <a href="https://www.naver.com/" target="_blank">Go to Naver</a>
+    <br>
+    <a href="https://www.naver.com/" title="마우스 커서를 올리면 나타나는 문장">a 태그의 title 속성</a>
+    <br>
+    <a href="../day1 0228/01_practice_cafe.html" target="_blank">cafe html로 이동</a>
+    <br>
+    <a href="https://velog.io/@wlgy33" target="_blank">
+        <img src="./image/1024px-Orange_tabby_cat_sitting_on_fallen_leaves-Hisashi-01A.jpeg" alt="go to my velog" width="200px"/>
+    </a>
+    <br>
+
+    <h2>Form 태그</h2>
+
+    <!-- input 태그 -->
+
+    
+</body>
+</html>

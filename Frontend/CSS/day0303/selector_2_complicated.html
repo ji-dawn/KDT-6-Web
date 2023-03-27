@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>복합 선택자</title>
+  <style>
+    header {
+      height: 70px;
+      background-color: gray;
+    }
+    main section {
+      border: 1px solid blue;
+    }
+    main section article {
+      height: 100px;
+      border: 1px solid skyblue;
+    }
+    /* 직계 자식 선택자 */
+    header>h2 {
+      color: white;
+      text-align: center;
+      /* heaer의 height가 70px이기 때문에 line-height를 70px로 설정해 가운데 정렬을 맞춤 */
+      line-height: 70px;
+    }
+    .first>h2 {
+      color: white;
+      background-color: navy;
+    }
+    .second>h2 {
+      color: navy;
+      background-color: white;
+    }
+    /* 후손 선택자 */
+    .second li {
+      /* font-size의 기본 크기는 16px */
+      font-size: 24px;
+      background-color: brown;
+      color: #ffffff;
+    }
+    /* 인접 형제 선택자 */
+    /* 바로 뒤에 붙어 있어야 한다. 가장 가까운 것을 찾는 것이 아님 */
+    #kong + li {
+      background-color: aqua;
+    }
+    #kong ~ li {
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>선택자 배우기</h2>
+    <main>
+      <section class="first">
+        <h2>첫 번째 section</h2>
+        <article>
+          <span>전래동화</span>
+        </article>
+        <article>
+          <ul>
+            <li>토끼와 거북이</li>
+            <li id="kong">콩쥐 팥쥐</li>
+            <!-- <span>test</span> -->
+            <li>흥부와 놀부</li>
+            <li>햇님 달님</li>
+            <li>은혜갚은 까치</li>
+          </ul>
+        </article>
+        <article></article>
+      </section>
+      <section class="second">
+        <h2>두 번째 section</h2>
+        <aritcle>
+          <ul>
+            <li>신데렐라</li>
+            <li>백설공주</li>
+          </ul>
+        </aritcle>
+      </section>
+    </main>
+  </header>
+</body>
+</html>

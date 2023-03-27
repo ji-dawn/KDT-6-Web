@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습 1 : 기본 선택자 연습하기</title>
+  <style>
+    /* 색상 지정 방법 */
+    /* 
+      1. 색상 이름 ex) red, blue
+      2. rgb( , , ); -> 0~255 까지의 수. ex) rgb(255, 255, 255); (white)
+         +rgba( , , , ); -> 'a'는 투명도를 나타냄. 0~1까지의 실수 범위
+      3. 색상 코드 ex) #f5a1e5
+    */
+    /* 전체에 적용할 때 '*' 또는 body */
+    * {
+      background-color: gray;
+      color: white;
+    }
+    span {
+      background-color: red;
+    }
+    #first {
+      background-color: blue;
+    }
+    .second {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>기본 선택자 연습해보기</h1>
+  <p>기본선택자 연습을 해보아요!</p>
+  <span>안녕하세요</span>
+  <ol>
+    <li id="first">1</li>
+    <li class="second">2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ol>
+</body>
+</html>

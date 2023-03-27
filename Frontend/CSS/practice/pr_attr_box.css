@@ -1,0 +1,29 @@
+.container {
+  background-color: orange;
+  height: 200px;
+}
+.container>div {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin-right: 30px;
+}
+/* .container>div:first-child {
+  background-color: aqua;
+} 
+.container>div:nth-child(2) {
+  background-color: green;
+}
+.container>div:nth-child(3) {
+    background-color: red;
+}
+*/
+.html-box {
+  background-color: skyblue;
+}
+.css-box {
+  background-color: green;
+}
+.js-box {
+  background-color: red;
+}

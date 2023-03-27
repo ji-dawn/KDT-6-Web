@@ -1,0 +1,50 @@
+.square {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+}
+.d-none {
+  /* display: none; */
+  background-color: red;
+}
+.invisible {
+  /* visibility: hidden; */
+  background-color: orange;
+}
+.opacity-0 {
+  /* opacity: 0; */
+  background-color: tomato;
+  opacity: 0.5;
+}
+
+.component {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+.component:hover {
+  display: none;
+}
+
+.square img[alt="pooh"] {
+  width: 200px;
+}
+.overflow-hidden {
+  /* overflow: hidden; */
+  overflow-x: hidden;
+}
+.overflow-auto {
+  /* 넘치는게 있을 때만 스크롤 생성 */
+  overflow: auto;
+}
+.overflow-scroll {
+  /* 컨텐트가 넘치지 않아도 스크롤 영역 존재 */
+  overflow: scroll;
+}
+.overflow-visible {
+  /* overflow의 기본값은 visible */
+  overflow: visible;
+  /* x축은 hidden y축은 auto */
+  overflow: hidden auto;
+}
