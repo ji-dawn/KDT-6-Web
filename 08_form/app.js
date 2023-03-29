@@ -20,16 +20,35 @@ app.get("/", function (req, res) {
   res.render("index", { title: myTitle, name: "Ji" });
 });
 
-// Front에서 submit되면
+// // Front에서 submit되면
+// app.get("/getForm", function (req, res) {
+//   // console.log(req);
+//   console.log(req.query); // { id: 'wlgy33', pw: 'sdkjfsj' }
+//   res.send("get 요청 성공");
+// });
+
+// app.post("/postForm", function (req, res) {
+//   console.log(req.body);
+//   res.send("post 요청 성공");
+// });
+
 app.get("/getForm", function (req, res) {
-  // console.log(req);
-  console.log(req.query); // { id: 'wlgy33', pw: 'sdkjfsj' }
-  res.send("get 요청 성공");
+  console.log(req.query);
+  // res.send("get 요청 성공");
+  res.render("result", {
+    title: "GET 요청 form 결과 확인하기",
+    id: req.query.id,
+    pw: req.query.pw,
+  });
 });
 
 app.post("/postForm", function (req, res) {
   console.log(req.body);
-  res.send("post 요청 성공");
+  // res.send("post 요청 성공");
+  res.render("result", {
+    title: "POST 요청 form 결과 확인하기",
+    userInfo: req.body,
+  });
 });
 
 app.listen(PORT, function () {
