@@ -37,8 +37,7 @@ app.get("/getForm", function (req, res) {
   // res.send("get 요청 성공");
   res.render("result", {
     title: "GET 요청 form 결과 확인하기",
-    id: req.query.id,
-    pw: req.query.pw,
+    userInfo: req.query,
   });
 });
 
