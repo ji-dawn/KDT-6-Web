@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>axios post 로그인</title>
+    <!-- axios jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      .success {
+        color: blue;
+        font-weight: 700;
+      }
+
+      .error {
+        color: red;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>axios post 로그인</h1>
+    <form name="login">
+      <label for="userId">ID</label>
+      <input type="text" name="userId" id="userId" />
+      <label for="userPw">PW</label>
+      <input type="password" name="userPw" id="userPw" />
+      <button type="button" onclick="clickLogin()">로그인</button>
+    </form>
+    <div class="result"></div>
+  </body>
+  <script>
+    const resultBox = document.querySelector(".result");
+    function axiosPostLogin() {
+      console.log("click axiosPostLogin button");
+
+      const form = document.forms["login"];
+
+      const formInfo = {
+        userId: form.userId.value,
+        userPw: form.userPw.value,
+      };
+
+      axios({
+        url: "/axios",
+        method: "POST",
+        data: formInfo,
+      }).then(function (response) {
+        console.log(response);
+        console.log(response.data);
+        if (response.data.isLogin) {
+          resultBox.textContent = `${response.data.userInfo.userId}님 로그인 성공!!`;
+          resultBox.classList.remove("error");
+          resultBox.classList.add("success");
+        } else {
+          resultBox.textContent = `아이디 또는 패스워드 오류!!`;
+          resultBox.classList.remove("success");
+          resultBox.classList.add("error");
+        }
+      });
+    }
+    function clickLogin() {
+      console.log("click login btn!");
+
+      const form = document.forms["login"];
+      const formInfo = {
+        userId: form.userId.value,
+        userPw: form.userPw.value,
+      };
+
+      axios({
+        url: "/axios",
+        method: "POST",
+        data: formInfo,
+      }).then(function (response) {
+        console.log(response);
+        console.log(response.data);
+
+        if (response.data.isLogin) {
+          // 로그인 성공
+          // response.data => {isLogin: true, userInfo: {…}}
+          // => id님 로그인 성공 메세지
+          resultBox.textContent = `${response.data.userInfo.userId}님 로그인 성공!!`;
+          resultBox.classList.remove("error");
+          resultBox.classList.add("success");
+        } else {
+          // 로그인 실패
+          // response.data => {isLogin: false}
+          // => 아이디 또는 패스워드 오류 메세지
+          resultBox.textContent = `아이디 또는 패스워드 오류!!`;
+          resultBox.classList.remove("success");
+          resultBox.classList.add("error");
+        }
+      });
+    }
+  </script>
+</html>
