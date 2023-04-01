@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습 파일 업로드 결과 예시</title>
+    <link rel="stylesheet" href="/static/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="/<%= src %>" alt="upload_image" />
+      <div class="user-id"><%= userInfo.userId %>님 환영합니다!</div>
+      <div class="user-pw">비밀번호: <%= userInfo.userPw %></div>
+      <div class="user-name">이름: <%= userInfo.userName %></div>
+      <div class="user-age">나이: <%= userInfo.userAge %></div>
+    </div>
+  </body>
+</html>

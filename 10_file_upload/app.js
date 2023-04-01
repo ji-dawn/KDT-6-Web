@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 8000;
+const PORT = 9000;
 
 // multer 미들웨어 사용하기
 const multer = require("multer");
