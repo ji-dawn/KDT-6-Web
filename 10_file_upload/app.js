@@ -78,6 +78,15 @@ app.post(
   }
 );
 
+app.post(
+  "/dynamicFile",
+  uploadDetail.single("dynamic-userfile"),
+  (req, res) => {
+    console.log(req.file); // 요청의 파일 정보 확인
+    res.send(req.file); // 클라이언트에게 파일 응답
+  }
+);
+
 app.listen(PORT, function () {
   console.log(`http://localhost:${PORT}`);
 });
