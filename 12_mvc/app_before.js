@@ -73,6 +73,7 @@ app.get("/comment/:id", (req, res) => {
 
 // [404 error]
 // 맨 마지막 라우트로 선언: nor 나머지 코드 무시되기 때문!!
+// * 라우팅은 제일 마지막에 선언되어야 한다. 없는 페이지에 대한 처리
 app.get("*", (req, res) => {
   // res.send('404 Error! 잘못된 주소 형식입니다.');
   res.render("404");
