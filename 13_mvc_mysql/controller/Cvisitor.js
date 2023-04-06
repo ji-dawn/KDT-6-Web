@@ -28,7 +28,25 @@ exports.postVisitor = (req, res) => {
   });
 };
 
-// (4) DELETE /visitor/delete
+// (4) GET /visitor/get
+exports.getVisitor = (req, res) => {
+  console.log("*", req.query); // { id: n }
+
+  Visitor.getVisitor(req.query.id, (result) => {
+    console.log("**", result); // model callback에서 넘겨주는 rows[0] => {}
+    res.send(result);
+  });
+};
+
+exports.patchVisitor = (req, res) => {
+  console.log(req.body);
+
+  Visitor.patchVisitor(req.body, () => {
+    res.send("수정 성공!");
+  });
+};
+
+// (5) DELETE /visitor/delete
 exports.deleteVisitor = (req, res) => {
   console.log(req.body); // { id: n }
 
