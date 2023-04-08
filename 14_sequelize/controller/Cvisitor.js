@@ -1,7 +1,7 @@
 // [before]
 // const Visitor = require('../model/Visitor');
 // [after]
-// models 변수 값 = models/index.js에서 export 한 db 객체
+// models = models/index.js에서 export 한 db 객체
 const models = require("../models"); // models/index.js 내보내는 값
 console.log(models);
 
