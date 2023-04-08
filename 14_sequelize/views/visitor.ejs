@@ -105,7 +105,8 @@
           console.log(res.data);
 
           // 1. 수정 성공 alert
-          alert(res.data);
+          // alert(res.data); // res.send(result)
+          alert("수정 완료"); // res.end()
 
           // 2. 수정 내용 반영
           const children = document.querySelector(`#tr_${id}`).children;
