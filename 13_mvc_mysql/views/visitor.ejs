@@ -90,10 +90,10 @@
 
       // (2) [변경] 버튼 클릭 시
       // - 데이터 수정 작업
-      function editDo(id) {
+      async function editDo(id) {
         const form = document.forms["visitor-form"];
 
-        axios({
+        await axios({
           method: "PATCH",
           url: "/visitor/edit",
           data: {
@@ -112,6 +112,9 @@
           children[1].textContent = form.name.value;
           children[2].textContent = form.comment.value;
         });
+
+        // 2. input 초기화
+        editCancel();
       }
 
       // (3) [취소] 버튼 클릭시
