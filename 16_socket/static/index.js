@@ -61,7 +61,11 @@ socket.on("notice", (msg) => {
 // [실습 3-2]
 function entry() {
   console.log(document.querySelector("#nickname").value);
-  socket.emit("setNick", document.querySelector("#nickname").value);
+  if (document.querySelector("#nickname").value === "") {
+    alert("닉네임을 입력해주세요");
+  } else {
+    socket.emit("setNick", document.querySelector("#nickname").value);
+  }
 }
 
 socket.on("entrySuccess", (nick) => {
@@ -99,15 +103,19 @@ socket.on("updateNicks", (obj) => {
 // [실습 4] 채팅창 메시지 전송 step 1
 // "send" 이벤트 전송 { 닉네임, 입력 메시지 }
 function send() {
-  const data = {
-    myNick: myNick,
-    dm: document.querySelector("#nick-list").value,
-    // => select에서 선택한 option의 value 값
-    msg: document.querySelector("#message").value,
-  };
-  socket.emit("send", data);
+  if (document.querySelector("#message").value === "") {
+    alert("내용을 입력해주세요");
+  } else {
+    const data = {
+      myNick: myNick,
+      dm: document.querySelector("#nick-list").value,
+      // => select에서 선택한 option의 value 값
+      msg: document.querySelector("#message").value,
+    };
+    socket.emit("send", data);
 
-  document.querySelector("#message").value = ""; // input 초기화
+    document.querySelector("#message").value = ""; // input 초기화
+  }
 }
 
 // [실습 4] 채팅창 메시지 전송 step 2
