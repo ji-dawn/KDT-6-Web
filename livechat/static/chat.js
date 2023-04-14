@@ -1,5 +1,6 @@
 // frontend js
-
+const inputNickname = document.querySelector("#nickname");
+const inputMessage = document.querySelector("#message");
 // socket 사용을 위해서 객체 생성
 let socket = io.connect();
 
@@ -20,10 +21,13 @@ socket.on("notice", (msg) => {
 
 // [실습 3-2]
 function entry() {
-  console.log(document.querySelector("#nickname").value);
+  console.log(inputNickname.value);
   // 공백 입력 막기
-  if (document.querySelector("#nickname").value === "") {
+  if (inputNickname.value === "") {
     alert("닉네임을 입력해주세요");
+  } else if (inputNickname.value[0] === " ") {
+    alert("맨 앞에 공백문자는 포함할 수 없습니다.");
+    inputNickname.value = "";
   } else {
     socket.emit("setNick", document.querySelector("#nickname").value);
   }
@@ -65,18 +69,21 @@ socket.on("updateNicks", (obj) => {
 // "send" 이벤트 전송 { 닉네임, 입력 메시지 }
 function send() {
   // 공백 입력 막기
-  if (document.querySelector("#message").value === "") {
+  if (inputMessage.value === "") {
     alert("내용을 입력해주세요");
+  } else if (inputMessage.value[0] === " ") {
+    alert("공백은 전송할 수 없습니다.");
+    inputMessage.value = "";
   } else {
     const data = {
       myNick: myNick,
       dm: document.querySelector("#nick-list").value,
       // => select에서 선택한 option의 value 값
-      msg: document.querySelector("#message").value,
+      msg: inputMessage.value,
     };
     socket.emit("send", data);
 
-    document.querySelector("#message").value = ""; // input 초기화
+    inputMessage.value = ""; // input 초기화
   }
 }
 
