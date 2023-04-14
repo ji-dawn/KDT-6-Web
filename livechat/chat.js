@@ -8,12 +8,7 @@ app.set("view engine", "ejs");
 app.use("/views", express.static(__dirname + "/views"));
 app.use("/static", express.static(__dirname + "/static"));
 
-app.get("/", (req, res) => {
-  console.log("client connected");
-  res.render("index");
-});
-
-app.get("/chat", (req, res) => {
+app.get("/", function (req, res) {
   console.log("client connected");
   res.render("chat");
 });
