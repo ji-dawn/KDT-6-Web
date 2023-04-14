@@ -61,6 +61,7 @@ socket.on("notice", (msg) => {
 // [실습 3-2]
 function entry() {
   console.log(document.querySelector("#nickname").value);
+  // 공백 입력 막기
   if (document.querySelector("#nickname").value === "") {
     alert("닉네임을 입력해주세요");
   } else {
@@ -103,6 +104,7 @@ socket.on("updateNicks", (obj) => {
 // [실습 4] 채팅창 메시지 전송 step 1
 // "send" 이벤트 전송 { 닉네임, 입력 메시지 }
 function send() {
+  // 공백 입력 막기
   if (document.querySelector("#message").value === "") {
     alert("내용을 입력해주세요");
   } else {
