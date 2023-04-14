@@ -38,26 +38,6 @@ io.on("connection", (socket) => {
   // => 크롬에서 탭 2개 띄우면 socket.id 는 각각 생김 (2개)
   console.log("⭕ Server Socket Connected >> ", socket.id);
 
-  // [실습1]
-  // socket.on("hello", (data) => {
-  //   console.log(`${data.who} : ${data.msg}`);
-  //   // server -> client 보낼 때
-  //   socket.emit("helloKr", { who: "server", msg: "안녕~~~" });
-  // });
-
-  // socket.on("study", (data) => {
-  //   console.log(`${data.who} : ${data.msg}`);
-  //   socket.emit("studyKr", { who: "server", msg: "공부해" });
-  // });
-
-  // socket.on("bye", (data) => {
-  //   console.log(`${data.who} : ${data.msg}`);
-  //   socket.emit("byeKr", { who: "server", msg: "잘가" });
-  // });
-
-  // [실습 3-1] 채팅창 입장 안내 문구
-  // io.emit("notice", `${socket.id.slice(0, 5)}님이 입장하셨습니다.`);
-
   // [실습 3-2] 채팅창 입장 안내 문구 socket.id -> nickname
   socket.on("setNick", (nick) => {
     console.log("socket on setNick nick >> ", nick); // a
@@ -95,11 +75,6 @@ io.on("connection", (socket) => {
     console.log("socket on send obj>>>", obj); // { myNick: 'a', dm: '', msg: 'asd' }
     // [전체] 선택하고 전송시 -> dm: 'all'
     // 특정 닉네임을 선택하고 전송 -> dm: socket.id
-
-    // [실습 4] 채팅창 메시지 전송 step 2 ([실습 5]를 위해 주석 처리)
-    // 서버에 접속한 모든 클라이언트한테 "누가" "뭐라고" 말했는지 이벤트 보내기
-    // const sendData = { nick: obj.myNick, msg: obj.msg };
-    // io.emit("newMessage", sendData);
 
     // [실습 5] DM 기능
     // 만약 DM 메시지라면, 그 특정 socket.id에게만 메시지 전달

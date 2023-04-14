@@ -11,46 +11,6 @@ socket.on("connect", () => {
   console.log("⭕️ Client Socket Connected >> ", socket.id);
 });
 
-// [실습1]
-// function sayHello() {
-//   // clinet -> server 정보 보내기
-//   // socket.emit(event, data): 데이터 "전송"
-//   // => event 라는 이름으로 data 를 전송
-//   socket.emit("hello", { who: "client", msg: "hello" });
-
-//   // socket.on(event, callbak): 데이터 "받음"
-//   // event에 대해서 정보를 받아 callback 함수 실행
-//   socket.on("helloKr", (data) => {
-//     p.textContent = `${data.who} : ${data.msg}`;
-//   });
-// }
-
-// function sayStudy() {
-//   socket.emit("study", { who: "client", msg: "study" });
-
-//   socket.on("studyKr", (data) => {
-//     p.textContent = `${data.who} : ${data.msg}`;
-//   });
-// }
-
-// function sayBye() {
-//   socket.emit("bye", { who: "client", msg: "bye" });
-
-//   socket.on("byeKr", (data) => {
-//     p.textContent = `${data.who} : ${data.msg}`;
-//   });
-// }
-
-// function sendMsg() {
-//   const chatContent = document.querySelector(".chat-content");
-//   const chat = document.querySelector("#message").value;
-//   socket.emit("msg", { who: "client", msg: chat });
-
-//   socket.on("msgKr", (data) => {
-//     chatContent.insertAdjacentText("afterend", data);
-//   });
-// }
-
 // [실습 3-1] 채팅창 입장 안내 문구
 socket.on("notice", (msg) => {
   document
@@ -137,25 +97,7 @@ socket.on("newMessage", (data) => {
   // 새 메시지가 도착했는데, myNick에 저장된 저장된 현재 내 닉네임과
   // data의 닉네임이 같다면, 내 채팅으로 보이게 (오른쪽 배치 == .my-chat)
   // data의 닉네임이 다르다면, 상대방 채팅으로 보이게 (왼쪽 배치 == .other-chat)
-  // if (myNick === data.nick) {
-  //   chatList.insertAdjacentHTML(
-  //     "beforeend",
-  //     `<div class="my-chat">
-  //   <div class="my-chat chat-user">${data.nick}</div>
-  //   <div class="my-chat chat-msg">${data.msg}</div>
-  // </div>`
-  //   );
-  // } else {
-  //   chatList.insertAdjacentHTML(
-  //     "beforeend",
-  //     `<div class="other-chat">
-  //   <div class="other-chat chat-user">${data.nick}</div>
-  //   <div class="other-chat chat-msg">${data.msg}</div>
-  // </div>`
-  //   );
-  // }
 
-  // 풀이
   if (myNick === data.nick) {
     div.classList.add("my-chat");
   } else {
