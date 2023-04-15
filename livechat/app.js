@@ -2,7 +2,25 @@ const express = require("express");
 const app = express();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
+const multer = require("multer");
 const PORT = 8000;
+
+const upload = multer({
+  dest: "uploads/",
+});
+
+const uploadDetail = multer({
+  storage: multer.diskStorage({
+    destination(req, file, done) {
+      done(null, "uploads/");
+    },
+    filename(req, file, done) {
+      const ext = path.extname(file.originalname);
+      done(null, path.basename(file.originalname, ext) + Date.now() + ext);
+    },
+  }),
+  limits: { fileSize: 5 * 1024 * 1024 },
+});
 
 app.set("view engine", "ejs");
 app.use("/views", express.static(__dirname + "/views"));
@@ -11,6 +29,11 @@ app.use("/static", express.static(__dirname + "/static"));
 app.get("/", function (req, res) {
   console.log("client connected");
   res.render("chat");
+});
+
+app.post("/dynamicFile", uploadDetail.array("userfile"), (req, res) => {
+  console.log(req.files);
+  console.log(req.body);
 });
 
 // nickname을 저장할 객체
@@ -63,7 +86,9 @@ io.on("connection", (socket) => {
 
     // 아래 순서는 지켜져야 한다. 2번부터 할 경우 이미 id를 삭제했기 때문에 undefined가 출력된다.
     // 1. xx님 퇴장하셨습니다. 출력
-    io.emit("notice", `${nickObj[socket.id]}님이 퇴장하셨습니다.`);
+    if (nickObj[socket.id] !== undefined) {
+      io.emit("notice", `${nickObj[socket.id]}님이 퇴장하셨습니다.`);
+    }
     // 2. nickObj에서 닫은 탭의 socket.id 삭제
     delete nickObj[socket.id];
     // 3. 리스트 업데이트

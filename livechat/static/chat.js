@@ -38,8 +38,8 @@ socket.on("entrySuccess", (nick) => {
   myNick = nick;
 
   // 2. nickname 입력창 & 버튼 비활성화
-  document.querySelector("#nickname").disabled = true;
-  document.querySelector(".entry-box > button").disabled = true;
+
+  document.querySelector(".entry-box").classList.add("d-none");
 
   // 3. chat-box 보이기
   document.querySelector(".chat-box").classList.remove("d-none");
@@ -85,6 +85,21 @@ function send() {
 
     inputMessage.value = ""; // input 초기화
   }
+}
+
+function fileUpload() {
+  const formData = new FormData();
+  const file = document.getElementById("dynamic-file");
+  formData.append("dynamic-file", file.files[0]);
+
+  axios({
+    method: "POST",
+    url: "/dynamicFile",
+    data: formData,
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  }).then((response) => {});
 }
 
 // [실습 4] 채팅창 메시지 전송 step 2

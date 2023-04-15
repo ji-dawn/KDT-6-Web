@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>실시간 채팅</title>
     <link rel="stylesheet" href="/static/index.css" />
+    <!-- axios jsDelivr CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- font-awesome -->
+    <script
+      src="https://kit.fontawesome.com/b29f947491.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- socket.io CDN -->
     <script
       src="https://cdn.socket.io/4.6.0/socket.io.min.js"
@@ -14,45 +21,63 @@
     ></script>
   </head>
   <body>
-    <h1>채팅</h1>
-
     <!-- [실습 3-2] 채팅창 입장 안내 문구 socket.id -> nickname -->
-    <div class="entry-box">
-      <input
-        type="text"
-        id="nickname"
-        placeholder="Nickname"
-        onkeypress="if (event.keyCode == 13) { entry()
-        
-      }"
-        autofocus
-      />
-      <button type="button" onclick="entry()">입장</button>
-    </div>
-    <!-- [실습 2] -->
-    <div class="chat-box d-none">
-      <div id="chat-list" class="chat-list">
-        <!--  임시 대화 데이터 -->
-        <!-- <div class="my-chat">
-          <div class="my-chat chat-user">user1</div>
-          <div class="my-chat chat-msg">msg1</div>
-        </div>
-        <div class="other-chat">
-          <div class="other-chat chat-user">user2</div>
-          <div class="other-chat chat-msg">msg2</div>
-        </div> -->
+    <div class="container">
+      <div class="entry-box">
+        <input
+          type="text"
+          id="nickname"
+          placeholder="채팅방 닉네임을 설정하세요"
+          onkeypress="if (event.keyCode == 13) { entry()
+          
+        }"
+          autofocus
+        />
+        <br />
+        <button type="button" id="entry-btn" onclick="entry()">입장</button>
       </div>
-      <div class="chat-content"></div>
-      <select id="nick-list"></select
-      >에게
-      <input
-        type="text"
-        id="message"
-        onkeypress="if (event.keyCode == 13) {send()}"
-      />
-      <button type="button" id="chat-submit" onclick="send()">전송</button>
-    </div>
 
+      <div class="chat-box d-none">
+        <div id="chat-list" class="chat-list">
+          <!-- <div class="cherry-blossom-petal"></div> -->
+          <!--  임시 대화 데이터 -->
+          <!--<div class="chat-user">user1</div>
+           <div class="my-chat">
+            <div class="my-chat chat-msg">msg1</div>
+          </div>
+          <div class="chat-user">user2</div>
+          <div class="other-chat">
+            <div class="other-chat chat-msg">msg2</div>
+          </div> -->
+        </div>
+        <div class="chat-content"></div>
+        <div class="chat-footer">
+          <select id="nick-list"></select>
+          <input
+            type="text"
+            id="message"
+            onkeypress="if (event.keyCode == 13) {send()}"
+          />
+          <!-- <label for="dynamic-file">
+            <i class="fa-solid fa-paperclip" style="color: #c2c2c2"></i
+          ></label>
+          <input
+            type="file"
+            id="dynamic-file"
+            name="dynamic-userfile"
+            multiple
+            style="opacity: 0"
+          /> -->
+          <button
+            type="button"
+            class="custom-btn"
+            onclick="send(); fileUpload();"
+          >
+            전송
+          </button>
+        </div>
+      </div>
+    </div>
     <script src="/static/chat.js"></script>
   </body>
 </html>

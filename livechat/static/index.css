@@ -1,12 +1,52 @@
-body {
-  background-color: aliceblue;
+.container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-/* [실습2] 채팅창 UI 만들기 */
+.entry-box {
+  text-align: center;
+  background-color: skyblue;
+  padding: 32px;
+  border-radius: 5px;
+}
+
+#nickname {
+  width: 200px;
+  height: 30px;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#entry-btn {
+  width: 200px;
+  height: 30px;
+  background-color: yellow;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 16px;
+  border: none;
+}
+
+#entry-btn:active {
+  background-color: #e9e9e9;
+}
+
+#message {
+  flex-grow: 1;
+  margin: 2px;
+}
+
 .chat-list {
   background-color: skyblue;
-  width: 50%;
-  height: 500px;
+  width: 350px;
+  height: 600px;
   padding: 10px;
   overflow-y: auto; /* height의 길이를 넘어갈 경우 스크롤 생성 */
 }
@@ -24,11 +64,6 @@ body {
   text-align: right;
 }
 
-.chat-user {
-  background-color: transparent;
-  font-size: 12px;
-}
-
 .my-chat div {
   background-color: yellow;
 }
@@ -37,12 +72,39 @@ body {
   background-color: white;
 }
 
-/* [실습 5] DM 기능 */
 .secret-chat div {
-  background-color: pink;
+  background-color: rgb(174, 94, 249);
+  color: #fff;
 }
 
-/* [실습 3] */
+.custom-btn {
+  background-color: yellow;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  color: #6e6e6e;
+  padding: 5px;
+}
+
+.chat-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#chat-submit:active {
+  background-color: #e9e9e9;
+}
+
+.clip {
+  background-color: transparent;
+  border: none;
+}
+
+.clip:active {
+  color: #6e6e6e;
+}
+
 .notice {
   text-align: center;
   color: #005397;
