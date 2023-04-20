@@ -3,6 +3,8 @@ import FunctionComponent from "./FunctionComponent";
 import Larva from "./Larva";
 import MyInfo from "./MyInfo";
 import Book from "./Book";
+import Prob1 from "./Prob1";
+import Prob1 from "./Prob2";
 import "./App.css";
 import StatePractice from "./StatePractice";
 
@@ -55,6 +57,8 @@ function App() {
       <ClassComponent />
       <FunctionComponent />
       <StatePractice />
+      <Prob1 />
+      <Prob2 />
     </>
   );
 }
