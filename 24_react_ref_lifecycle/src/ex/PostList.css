@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+header {
+  background-color: rgb(71, 130, 241);
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  padding: 16px;
+}
+.PostItem {
+  width: 500px;
+  background-color: rgb(193, 237, 255);
+  margin: 32px;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: left;
+}
+.id {
+  color: rgb(71, 130, 241);
+}
+.title {
+  color: gray;
+}
+.body {
+  font-weight: 600;
+}

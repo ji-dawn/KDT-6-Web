@@ -6,6 +6,7 @@ import RefSample4 from "./RefSample4";
 import RefTable from "./ex/RefTable";
 import LifeCycleFunc from "./LifeCycleFunc";
 import LifeCycleClass from "./LifeCycleClass";
+import PostList from "./ex/PostList";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       {/* <RefSample4 /> */}
       {/* <RefTable /> */}
       {/* <LifeCycleFunc /> */}
-      <LifeCycleClass />
+      {/* <LifeCycleClass /> */}
+      <PostList />
     </div>
   );
 }
