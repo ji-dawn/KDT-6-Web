@@ -1,0 +1,53 @@
+$color-pink: pink;
+$color-yellow: yellow;
+$color-green: green;
+
+@mixin circle($color) {
+  width: 100px;
+  height: 100px;
+  background-color: $color;
+  border-radius: 50%;
+}
+
+@mixin animation-clockwise($name, $length) {
+  @keyframes #{$name} {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate($length, 0);
+    }
+    50% {
+      transform: translate($length, $length);
+    }
+    75% {
+      transform: translate(0, $length);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.circle {
+  position: relative;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &.pink {
+    @include circle($color-pink);
+    @include animation-clockwise(clockwise1, 100px);
+    animation-name: clockwise1;
+  }
+  &.yellow {
+    @include circle($color-yellow);
+    @include animation-clockwise(clockwise2, 200px);
+    animation-name: clockwise2;
+  }
+  &.green {
+    @include circle($color-green);
+    @include animation-clockwise(clockwise3, 300px);
+    animation-name: clockwise3;
+  }
+}

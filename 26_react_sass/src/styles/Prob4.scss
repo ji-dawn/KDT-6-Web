@@ -1,0 +1,69 @@
+@import "~include-media/dist/include-media";
+
+// breakpoin 변수 선언
+$breakpoint-md: 768px;
+$breakpoint-sm: 532px;
+
+// ver1. flex
+// .Prob4 {
+//   display: flex;
+
+//   div {
+//     width: 20%;
+
+//     img {
+//       width: 100%;
+//       aspect-ratio: 1 / 1; // 종횡비. 1:1 비율에 맞춰 늘리거나 줄임
+//       object-fit: cover; // 이미지 변화없이 그대로 보여줌
+//     }
+//   }
+// }
+
+// @include media("<#{$breakpoint-md}") {
+//   .Prob4 {
+//     flex-wrap: wrap;
+
+//     div {
+//       width: 33.3%;
+//     }
+//   }
+// }
+
+// @include media("<#{$breakpoint-sm}") {
+//   .Prob4 {
+//     flex-wrap: wrap;
+
+//     div {
+//       width: 100%;
+//     }
+//   }
+// }
+
+// ver2. grid
+.Prob4 {
+  display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+
+  div {
+    width: 100%;
+    img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+  }
+}
+
+@include media("<#{$breakpoint-md}") {
+  .Prob4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include media("<#{$breakpoint-sm}") {
+  .Prob4 {
+    grid-template-columns: repeat(1, 1fr);
+    // display: block; 둘 중 하나
+  }
+}

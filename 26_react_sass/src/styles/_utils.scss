@@ -1,0 +1,23 @@
+// _utils.scss
+// 변수, mixin 등을 정의하는 파일
+// 파일명 앞에 _(underscore)를 붙이는 이유
+// : 변수, mixin 만을 저장할 파일이기 때문에
+//   별도의 표준 css로 변환(컴파일)될 필요가 없음
+// 성능/관리 측면에서의 향상을 위함
+$color-red: red;
+$color-orange: orange;
+$color-yellow: yellow;
+$color-green: green;
+$color-blue: blue;
+$color-indigo: indigo;
+$color-purple: purple;
+
+$animation-duration: 0.4s;
+
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
+
+// BREAKPOINT
+$breakpoint-tablet: 758px;

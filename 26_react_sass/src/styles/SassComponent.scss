@@ -1,0 +1,68 @@
+@import "./_utils.scss";
+@import "~include-media/dist/include-media";
+// ~ : node_modules에서 라이브러리 디렉토리를 알아서 탐색. 파일 경로를 직접 적지 않아도 됨
+// SCSS 주석
+
+// 특징 3. $ 변수 선언
+
+// 특징 4. mixin 사용 (=함수)
+// mixin을 정의할 때 : @mixin 키워드
+// mixin을 사용할 때 : @include 키워드
+
+// 특징 1. 중첩 가능
+// : 요소 간 부모 자식 표현이 용이
+.SassComponent {
+  display: flex;
+  background-color: rgb(204, 204, 204);
+
+  .box {
+    // width: 100px;
+    // height: 100px;
+    @include box(100px);
+    // border: 1px solid black;
+    // 특징 2. & 선택자
+    // 부모 선택자를 참조하여 치환
+    &:hover {
+      $box-animation: $animation-duration * 2;
+      cursor: pointer;
+      transform: translateY(-20px);
+      transition: transform $box-animation;
+    }
+    &.red {
+      // .box.red 와 동일
+      background-color: $color-red;
+    }
+    &.orange {
+      background-color: $color-orange;
+    }
+    &.yellow {
+      background-color: $color-yellow;
+    }
+    &.green {
+      background-color: $color-green;
+    }
+    &.blue {
+      background-color: $color-blue;
+    }
+    &.indigo {
+      background-color: $color-indigo;
+    }
+    &.purple {
+      background-color: $color-purple;
+    }
+  }
+}
+
+// 반응형
+// @media (max-width: #{$breakpoint-tablet}) {
+//   .SassComponent {
+//     flex-direction: column;
+//   }
+// }
+
+// @include media("<758px") {
+@include media("<#{$breakpoint-tablet}") {
+  .SassComponent {
+    flex-direction: column;
+  }
+}
