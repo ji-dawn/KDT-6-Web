@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.Header {
+  background-color: #ddd;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .menu-item {
+    margin: 0 8px;
+  }
+}
+.MainPage {
+  background-color: orange;
+  min-height: 100vh;
+}
+.ProductDetailPage {
+  background-color: rgb(47, 75, 97);
+  min-height: 100vh;
+}
+.ProductPage {
+  background-color: green;
+  min-height: 100vh;
+}
+.NotFound {
+  background-color: pink;
+  min-height: 100vh;
+}
