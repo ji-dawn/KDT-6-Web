@@ -16,16 +16,29 @@
 .MainPage {
   background-color: orange;
   min-height: 100vh;
+  &.Dark {
+    background-color: #333;
+  }
 }
 .ProductDetailPage {
-  background-color: rgb(47, 75, 97);
+  background-color: cornflowerblue;
   min-height: 100vh;
 }
 .ProductPage {
-  background-color: green;
+  background-color: skyblue;
   min-height: 100vh;
 }
 .NotFound {
   background-color: pink;
   min-height: 100vh;
+}
+.ProductItem {
+  background-color: white;
+  width: 80vw;
+  margin: 30px auto 0 auto;
+  list-style: none;
+
+  &:hover {
+    font-weight: 700;
+  }
 }
