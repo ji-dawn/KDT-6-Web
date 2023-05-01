@@ -8,6 +8,8 @@ import ProductPage from "./pages/ProductPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import NotFound from "./pages/NotFound";
 
+import Student_prac from "./pages/Student_prac";
+
 function App() {
   const [products, setProducts] = useState([]);
 
@@ -37,6 +39,9 @@ function App() {
             element={<ProductDetailPage products={products} />}
           />
           <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Routes>
+          <Route path="/student/:name" element={<Student_prac />} />
         </Routes>
       </BrowserRouter>
     </div>
