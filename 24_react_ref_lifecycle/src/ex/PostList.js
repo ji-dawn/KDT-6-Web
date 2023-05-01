@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PostItem from "./PostItem";
 import axios from "axios";
+import "./PostList.css";
 
 // 임시 데이터 (backend 서버에서 받아왔다고 가정하는 데이터)
 const fakePosts = [
@@ -97,7 +98,7 @@ const PostList = () => {
       {/* posts state의 길이에 따라 보여주는 정보 달리하기 (힌트: 삼항 연산자) */}
       {/* posts state 길이가 0 이라면 데이터를 불러오는 중이므로 loading 메세지 */}
       {/* posts state 길이가 0 이 아니라면 데이터를 불러왔으므로 PostItem 컴포넌트 반복 */}
-      {posts.length > 0 ? dataLoaded : dataLoading}
+      {posts.length > 0 ? dataLoaded : dataLoading()}
     </div>
   );
 };
